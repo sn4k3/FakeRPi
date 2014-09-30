@@ -104,6 +104,7 @@ def PWM(channel, frequency):
     """
     return None
 
+
 def cleanup(channel=None):
     """
     At the end any program, it is good practice to clean up any resources you might have used. This is no different with RPi.GPIO.

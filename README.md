@@ -2,8 +2,11 @@ FakeRPI
 =======
 
 Develop for Raspberry Pi on Windows or other systems that don't have RPI.GPIO libraries.
+
 It implements RPI.GPIO functions and return None values.
+
 When we are developing on some IDE's, they will verify the code syntax and consequently report many errors as the library is not present on include paths. That can be annoying for the user, as they see a lot of errors everywhere and some red lines. With FakeRPI you can fix that and also benefits from code completion and some utilities.
+
 This is not an emulator of Rasberry Pi!
 
 ## When to use

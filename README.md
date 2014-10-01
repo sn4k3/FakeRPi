@@ -106,19 +106,21 @@ GPIO.cleanup()
 ### RPI.Utilities
 
 ```
-import sys
-if sys.platform == 'win32': 
-	# Fake
-	"""
-    import FakeRPI.GPIO as GPIO
-	OR
-    import FakeRPI.RPIO as RPIO
-	"""
-	
-	import FakeRPI.GPIO as GPIO
-else: 
-	# Real
+import importlib.util
+try: 
+	# Check and import real RPI.GPIO library
+    importlib.util.find_spec('RPI.GPIO')
     import RPI.GPIO as GPIO
+except ImportError:
+	# If real RPI.GPIO library fails, load the fake one
+    """
+    import FakeRPI.GPIO as GPIO
+    OR
+    import FakeRPI.RPIO as RPIO
+    """
+	
+    import FakeRPI.GPIO as GPIO
+	
 import FakeRPI.Utilities as Utilities
 
 Utilities.set_default_pintype(Utilities.PIN_TYPE_BOARD)

@@ -27,20 +27,66 @@ This is not an emulator of Rasberry Pi!
 
 ### RPI.GPIO
 
+#### Importing
+
+Importing library
+Python >= 2.7 & Python >= 3.4
+
 ```
-import sys
-if sys.platform == 'win32': 
-	# Fake
-	"""
-    import FakeRPI.GPIO as GPIO
-	OR
-    import FakeRPI.RPIO as RPIO
-	"""
-	
-	import FakeRPI.GPIO as GPIO
-else: 
-	# Real
+import importlib.util
+try:
+    importlib.util.find_spec('RPI.GPIO')
     import RPI.GPIO as GPIO
+except ImportError:
+    """
+    import FakeRPI.GPIO as GPIO
+    OR
+    import FakeRPI.RPIO as RPIO
+    """
+	
+    import FakeRPI.GPIO as GPIO
+	
+# Do your code here
+```
+
+Importing library
+Python < 2.7 & Python < 3.4 OR Python >= 2.7 & Python >= 3.4 (Deprecated)
+
+```
+import imp
+try:
+    imp.find_module('RPI.GPIO')
+    import RPI.GPIO as GPIO
+except ImportError:
+    """
+    import FakeRPI.GPIO as GPIO
+    OR
+    import FakeRPI.RPIO as RPIO
+    """
+	
+    import FakeRPI.GPIO as GPIO
+	
+# Do your code here
+```
+
+#### Examples
+
+```
+import importlib.util
+try: 
+	# Check and import real RPI.GPIO library
+    importlib.util.find_spec('RPI.GPIO')
+    import RPI.GPIO as GPIO
+except ImportError:
+	# If real RPI.GPIO library fails, load the fake one
+    """
+    import FakeRPI.GPIO as GPIO
+    OR
+    import FakeRPI.RPIO as RPIO
+    """
+	
+    import FakeRPI.GPIO as GPIO
+
 	
 
 GPIO.setmode(GPIO.BCM)

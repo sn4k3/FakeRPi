@@ -30,7 +30,7 @@ This is not an emulator of Rasberry Pi!
 #### Importing
 
 Importing library
-Python >= 2.7 & Python >= 3.4
+Python >= 2.7 & Python >= 3.1
 
 ```
 import importlib.util
@@ -50,7 +50,7 @@ except ImportError:
 ```
 
 Importing library
-Python < 2.7 & Python < 3.4 OR Python >= 2.7 & Python >= 3.4 (Deprecated)
+Python < 2.7 & Python < 3.4 OR Python >= 2.7 & Python >= 3.1 (Deprecated)
 
 ```
 import imp

@@ -1,7 +1,7 @@
 __author__ = 'Tiago'
 __documentation__ = 'https://pythonhosted.org/RPIO/rpio_py.html#ref-rpio-py-additions'
 
-from FakeRPI.GPIO import *
+from FakeRPi.GPIO import *
 
 
 RPI_REVISION = 1

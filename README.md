@@ -1,11 +1,11 @@
-FakeRPI
+FakeRPi
 =======
 
-Develop for Raspberry Pi on Windows or other systems that don't have RPI.GPIO libraries.
+Develop for Raspberry Pi on Windows or other systems that don't have RPi.GPIO libraries.
 
-It implements RPI.GPIO functions and return None values.
+It implements RPi.GPIO functions and return None values.
 
-When we are developing on some IDE's, they will verify the code syntax and consequently report many errors as the library is not present on include paths. That can be annoying for the user, as they see a lot of errors everywhere and some red lines. With FakeRPI you can fix that and also benefits from code completion and some utilities.
+When we are developing on some IDE's, they will verify the code syntax and consequently report many errors as the library is not present on include paths. That can be annoying for the user, as they see a lot of errors everywhere and some red lines. With FakeRPi you can fix that and also benefits from code completion and some utilities.
 
 This is not an emulator of Rasberry Pi!
 
@@ -18,14 +18,14 @@ This is not an emulator of Rasberry Pi!
 
 ## Features
 
-* Implements all methods and constants from RPI.GPIO;
-* Supports RPIO;
+* Implements all methods and constants from RPi.GPIO;
+* Supports RPiO;
 * Code completion;
 * Some useful utilities.
 
 ## Usages
 
-### RPI.GPIO
+### RPi.GPIO
 
 #### Importing
 
@@ -35,16 +35,16 @@ Python >= 2.7 & Python >= 3.1
 ```
 import importlib.util
 try:
-    importlib.util.find_spec('RPI.GPIO')
-    import RPI.GPIO as GPIO
+    importlib.util.find_spec('RPi.GPIO')
+    import RPi.GPIO as GPIO
 except ImportError:
     """
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
     OR
-    import FakeRPI.RPIO as RPIO
+    import FakeRPi.RPiO as RPiO
     """
 	
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
 	
 # Do your code here
 ```
@@ -55,16 +55,16 @@ Python < 2.7 & Python < 3.4 OR Python >= 2.7 & Python >= 3.1 (Deprecated)
 ```
 import imp
 try:
-    imp.find_module('RPI.GPIO')
-    import RPI.GPIO as GPIO
+    imp.find_module('RPi.GPIO')
+    import RPi.GPIO as GPIO
 except ImportError:
     """
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
     OR
-    import FakeRPI.RPIO as RPIO
+    import FakeRPi.RPiO as RPiO
     """
 	
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
 	
 # Do your code here
 ```
@@ -74,18 +74,18 @@ except ImportError:
 ```
 import importlib.util
 try: 
-	# Check and import real RPI.GPIO library
-    importlib.util.find_spec('RPI.GPIO')
-    import RPI.GPIO as GPIO
+	# Check and import real RPi.GPIO library
+    importlib.util.find_spec('RPi.GPIO')
+    import RPi.GPIO as GPIO
 except ImportError:
-	# If real RPI.GPIO library fails, load the fake one
+	# If real RPi.GPIO library fails, load the fake one
     """
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
     OR
-    import FakeRPI.RPIO as RPIO
+    import FakeRPi.RPiO as RPiO
     """
 	
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
 
 	
 
@@ -103,25 +103,25 @@ else:
 GPIO.cleanup()
 ```
 
-### RPI.Utilities
+### RPi.Utilities
 
 ```
 import importlib.util
 try: 
-	# Check and import real RPI.GPIO library
-    importlib.util.find_spec('RPI.GPIO')
-    import RPI.GPIO as GPIO
+	# Check and import real RPi.GPIO library
+    importlib.util.find_spec('RPi.GPIO')
+    import RPi.GPIO as GPIO
 except ImportError:
-	# If real RPI.GPIO library fails, load the fake one
+	# If real RPi.GPIO library fails, load the fake one
     """
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
     OR
-    import FakeRPI.RPIO as RPIO
+    import FakeRPi.RPiO as RPiO
     """
 	
-    import FakeRPI.GPIO as GPIO
+    import FakeRPi.GPIO as GPIO
 	
-import FakeRPI.Utilities as Utilities
+import FakeRPi.Utilities as Utilities
 
 Utilities.set_default_pintype(Utilities.PIN_TYPE_BOARD)
 
@@ -134,7 +134,7 @@ pin6 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_6)
 pin7 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_7)
 sda1 = Utilities.get_pin(Utilities.PIN_GPIO_02_SDA1_I2C)
 
-GPIO.setmode(RPIO.BOARD)
+GPIO.setmode(RPiO.BOARD)
 GPIO.setup(pin1, GPIO.OUTPUT)
 GPIO.setup(pin1, GPIO.OUTPUT)
 GPIO.setup(pin2, GPIO.INPUT)

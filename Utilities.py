@@ -175,19 +175,19 @@ PINS = {
 }
 
 
-_default_type = PIN_TYPE_BCM
+mode = PIN_TYPE_BOARD
 
 
-def set_default_pintype(type):
+def setmode(type):
     """
     Set the default pin board type to use with get_pin function
     :param type:
     :return:
     """
-    _default_type = type
+    mode = type
 
 
-def get_pin(pin, board_type=_default_type):
+def get_pin(pin, board_type=mode):
     """
     Get the appropriate pin number
     :param pin: Pin to use. eg: PIN_GPIO_02

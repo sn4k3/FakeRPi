@@ -30,7 +30,7 @@ This is not an emulator of Rasberry Pi!
 #### Importing
 
 Importing library
-Python >= 2.7 & Python >= 3.1
+Python >= 2.7 & Python >= 3.2
 
 ```
 import importlib.util
@@ -50,7 +50,7 @@ except ImportError:
 ```
 
 Importing library
-Python < 2.7 & Python < 3.4 OR Python >= 2.7 & Python >= 3.1 (Deprecated)
+Python < 2.7 & Python < 3.4 OR Python >= 2.7 & Python >= 3.2 (Deprecated)
 
 ```
 import imp
@@ -121,18 +121,18 @@ except ImportError:
 	
     import FakeRPi.GPIO as GPIO
 	
-import FakeRPi.Utilities as Utilities
+import FakeRPi.Utilities
 
-Utilities.set_default_pintype(Utilities.PIN_TYPE_BOARD)
+FakeRPi.Utilities.mode = FakeRPi.Utilities.PIN_TYPE_BOARD
 
-pin1 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_1)
-pin2 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_2)
-pin3 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_3)
-pin4 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_4)
-pin5 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_5)
-pin6 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_6)
-pin7 = Utilities.get_pin(Utilities.PIN_GPIO_GEN_7)
-sda1 = Utilities.get_pin(Utilities.PIN_GPIO_02_SDA1_I2C)
+pin1 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_GEN_1)
+pin2 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_GEN_2)
+pin3 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_GEN_3)
+pin4 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_GEN_4)
+pin5 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_GEN_5)
+pin6 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_GEN_6)
+pin7 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_GEN_7)
+sda1 = FakeRPi.Utilities.get_pin(FakeRPi.Utilities.PIN_GPIO_02_SDA1_I2C)
 
 GPIO.setmode(RPiO.BOARD)
 GPIO.setup(pin1, GPIO.OUTPUT)
@@ -145,5 +145,5 @@ GPIO.setup(pin6, GPIO.INPUT)
 GPIO.setup(pin7, GPIO.OUTPUT)
 
 print(GPIO.input(pin6))
-print(Utilities.PIN_GPIO_GEN_6 == Utilities.PIN_GPIO_25_GEN_6 == Utilities.PIN_GPIO_25)  # Must be true
+print(FakeRPi.Utilities.PIN_GPIO_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25)  # Must be true
 ```

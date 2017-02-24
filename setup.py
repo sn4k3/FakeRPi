@@ -14,7 +14,7 @@ setup(
     long_description=open('README.md').read(),
     keywords='GPIO, RPi, FakeRPi',
     include_package_data=True,
-    packages=['fake_rpi'],
+    packages=['FakeRPi'],
     # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Development Status :: 3 - Alpha',

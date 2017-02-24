@@ -9,6 +9,12 @@ When we are developing on some IDE's, they will verify the code syntax and conse
 
 This is not an emulator of Rasberry Pi!
 
+## Install
+
+```bash
+pip install git+https://github.com/sn4k3/FakeRPi
+```
+
 ## When to use
 
 * Developing on Windows and sync with Raspberry Pi;
@@ -146,4 +152,21 @@ GPIO.setup(pin7, GPIO.OUTPUT)
 
 print(GPIO.input(pin6))
 print(FakeRPi.Utilities.PIN_GPIO_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25)  # Must be true
-```
+```GPIO.INPUT)
+    GPIO.setup(pin3, GPIO.INPUT)
+    GPIO.setup(pin4, GPIO.OUTPUT)
+    GPIO.setup(pin5, GPIO.OUTPUT)
+    GPIO.setup(pin6, GPIO.INPUT)
+    GPIO.setup(pin7, GPIO.OUTPUT)
+
+    print(GPIO.input(pin6))
+    print(FakeRPi.Utilities.PIN_GPIO_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25)  # Must be true
+    ```GPIO.INPUT)
+        GPIO.setup(pin3, GPIO.INPUT)
+        GPIO.setup(pin4, GPIO.OUTPUT)
+        GPIO.setup(pin5, GPIO.OUTPUT)
+        GPIO.setup(pin6, GPIO.INPUT)
+        GPIO.setup(pin7, GPIO.OUTPUT)
+
+        print(GPIO.input(pin6))
+        print(FakeRPi.Utilities.PIN_GPIO_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25_GEN_6 == FakeRPi.Utilities.PIN_GPIO_25)  # Must be true

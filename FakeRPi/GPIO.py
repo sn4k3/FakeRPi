@@ -1,3 +1,5 @@
+from .PWM import PWM as PWMClass
+
 __author__ = 'Tiago'
 __documentation__ = 'http://sourceforge.net/p/raspberry-gpio-python/wiki/Examples/'
 
@@ -102,7 +104,7 @@ def PWM(channel, frequency):
     To create a PWM instance:
     :return:
     """
-    return None
+    return PWMClass()
 
 
 def cleanup(channel=None):

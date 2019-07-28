@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='fake_rpi',
-    version='0.1',
+    version='0.2',
     url='https://github.com/sn4k3/FakeRPi',
     author='Tiago',
     author_email='Tiago_caza@hotmail.com',
